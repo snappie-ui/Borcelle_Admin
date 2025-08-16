@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge"
 import { Input } from "../ui/input";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
 
