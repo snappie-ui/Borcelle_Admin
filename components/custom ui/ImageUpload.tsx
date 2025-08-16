@@ -42,7 +42,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         ))}
       </div>
 
-<CldUploadWidget uploadPreset= "myyu6boo" onSuccess={onUpload}>
+<CldUploadWidget uploadPreset= "myyu6boo" options={{ multiple: true }} onSuccess={onUpload}>
         {({ open }) => {
           return (
             <Button type="button" onClick={() => open()} className="bg-grey-1 text-white">
