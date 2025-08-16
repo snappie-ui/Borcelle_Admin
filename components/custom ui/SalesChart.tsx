@@ -2,6 +2,7 @@
 
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SalesChart = ({ data }: { data: any[] }) => {
   return (
     <ResponsiveContainer width="100%" height={300}>

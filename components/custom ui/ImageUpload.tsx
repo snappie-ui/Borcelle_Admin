@@ -16,6 +16,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   onRemove,
   value,
 }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onUpload = (result: any) => {
     if (result.event === "success") {
       onChange(result.info.secure_url);

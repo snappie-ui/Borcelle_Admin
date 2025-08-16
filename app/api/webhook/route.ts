@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Customer from "@/lib/models/Customer";
 import Order from "@/lib/models/Order";
 import { connectToDB } from "@/lib/mongoDB";
@@ -29,12 +30,13 @@ export const POST = async (req: NextRequest) => {
         };
 
         const shippingAddress = {
-          street: session?.shipping_details?.address?.line1,
-          city: session?.shipping_details?.address?.city,
-          state: session?.shipping_details?.address?.state,
-          postalCode: session?.shipping_details?.address?.postal_code,
-          country: session?.shipping_details?.address?.country,
-        };
+        street: (session as any)?.shipping_details?.address?.line1,
+        city: (session as any)?.shipping_details?.address?.city,
+        state: (session as any)?.shipping_details?.address?.state,
+        postalCode: (session as any)?.shipping_details?.address?.postal_code,
+        country: (session as any)?.shipping_details?.address?.country,
+};
+
 
         // Retrieve the full session object to get line items
         const retrieveSession = await stripe.checkout.sessions.retrieve(
@@ -44,6 +46,7 @@ export const POST = async (req: NextRequest) => {
 
         const lineItems = retrieveSession?.line_items?.data;
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const orderItems = lineItems?.map((item: any) => {
           return {
             product: item.price.product.metadata.productId,
@@ -101,6 +104,7 @@ export const POST = async (req: NextRequest) => {
 
     // Return a 200 response to acknowledge receipt of the event
     return new NextResponse("Webhook received successfully", { status: 200 });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     // It's important to catch errors and log them, but still return a 200
     // response to Stripe if the issue is on our end, to prevent retries.

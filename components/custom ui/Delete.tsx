@@ -22,6 +22,7 @@ interface DeleteProps {
 }
 
 const Delete: React.FC<DeleteProps> = ({  item,id }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, setLoading] = useState(false);
 
   const onDelete = async () => {

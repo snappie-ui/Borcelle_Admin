@@ -1,6 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 
+// --- Define a specific type for your cart items ---
+type CartItem = {
+  item: {
+    _id: string;
+    title: string;
+    price: number;
+    // Add other properties of 'item' if they exist
+  };
+  quantity: number;
+  color?: string; // Use '?' for optional properties
+  size?: string;
+};
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -19,9 +32,6 @@ export async function POST(req: NextRequest) {
       return new NextResponse("Not enough data to checkout", { status: 400 });
     }
 
-    console.log("cartItems", cartItems);
-    console.log("customer", customer);
-
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -32,7 +42,8 @@ export async function POST(req: NextRequest) {
         { shipping_rate: "shr_1RwKInLyk7zF84dHRmLXSmkR" },
         { shipping_rate: "shr_1RwKEYLyk7zF84dHgwrtiT0A" },
       ],
-      line_items: cartItems.map((cartItem: any) => ({
+      // --- Use the specific CartItem type instead of 'any' ---
+      line_items: cartItems.map((cartItem: CartItem) => ({
         price_data: {
           currency: "inr",
           product_data: {

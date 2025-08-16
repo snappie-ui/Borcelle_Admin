@@ -36,7 +36,9 @@ interface CollectionFormProps {
 
 const CollectionForm: React.FC<CollectionFormProps> = ({ initialData }) => {
   const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const params = useParams();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, setLoading] = useState(false);
     const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

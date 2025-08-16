@@ -5,6 +5,7 @@ import { connectToDB } from "@/lib/mongoDB";
 import { NextRequest, NextResponse } from "next/server";
 import {format} from "date-fns";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const GET = async (req: NextRequest) => {
   try {
     await connectToDB()

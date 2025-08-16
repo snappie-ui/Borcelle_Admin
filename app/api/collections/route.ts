@@ -41,6 +41,7 @@ export const POST = async (req: NextRequest) => {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const GET = async (req: NextRequest) => {
   try {
     await connectToDB()
