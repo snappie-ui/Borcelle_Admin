@@ -24,22 +24,22 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 
 ## 🔑 Sign-in Page
-![Login](screenShots/Sign_in.png)
+![Login](ScreenShots/Sign_in.png)
 
 ## 📊 Dashboard
-![Dashboard](screenShots/dashboard.png)
+![Dashboard](ScreenShots/dashboard.png)
 
 ## Collection_Page
-![Collection_Page](screenShots/Collection.png)
+![Collection_Page](ScreenShots/Collection.png)
 
 ## Product_Page
-![Product_Page](screenShots/Products.png)
+![Product_Page](ScreenShots/Products.png)
 
 ## Create_product_Page
-![Create_product_Page](screenShots/Create_product.png)
+![Create_product_Page](ScreenShots/Create_product.png)
 
 ## 🏠 Create_Collection_Page
-![Create_Collection_Page](screenshots/Create_Collection.png)
+![Create_Collection_Page](Screenshots/Create_Collection.png)
 
 ## Learn More
 
