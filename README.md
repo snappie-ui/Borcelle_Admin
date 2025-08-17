@@ -20,6 +20,27 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+# Project Screenshots
+
+
+## 🔑 Sign-in Page
+![Login](screenShots/Sign_in.png)
+
+## 📊 Dashboard
+![Dashboard](screenShots/dashboard.png)
+
+## Collection_Page
+![Collection_Page](screenShots/Collection.png)
+
+## Product_Page
+![Product_Page](screenShots/Products.png)
+
+## Create_product_Page
+![Create_product_Page](screenShots/Create_product.png)
+
+## 🏠 Create_Collection_Page
+![Create_Collection_Page](screenshots/Create_Collection.png)
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
